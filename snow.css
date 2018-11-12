@@ -1,0 +1,67 @@
+.snow-container {
+  position: absolute;
+  height: 100%;
+  width: 115%;
+  max-width: 115%;
+  top: 0;
+  left: -15%;
+  overflow: hidden;
+  z-index: 2; /*multi layered ?*/
+  background-color: black;
+}
+
+.snow {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  -webkit-transform: translate3d(0, -100%, 0); /*safari*/
+          transform: translate3d(0, -100%, 0);
+  -webkit-animation: snow linear infinite; /*safari*/
+          animation: snow linear infinite;
+}
+
+.snow.foreground {
+  background-image: url("./images/snow-large.png");
+  -webkit-animation-duration: 15s; /*safari*/
+          animation-duration: 15s;
+}
+.snow.foreground.layered {
+  -webkit-animation-delay: 7.5s; /*safari*/
+          animation-delay: 7.5s;
+}
+
+.snow.middleground {
+  background-image: url("./images/snow-medium.png");
+  -webkit-animation-duration: 20s; /*safari*/
+          animation-duration: 20s;
+}
+.snow.middleground.layered {
+  -webkit-animation-delay: 10s; /*safari*/
+          animation-delay: 10s;
+}
+
+.snow.background {
+  background-image: url("./images/snow-small.png");
+  -webkit-animation-duration: 30s; /*safari*/
+          animation-duration: 30s;
+}
+.snow.background.layered {
+  -webkit-animation-delay: 15s; /*safari*/
+          animation-delay: 15s;
+}
+
+
+@-webkit-keyframes snow { /*safari*/
+  0%  {  -webkit-transform: translate3d(0, -100%, 0);  }
+  100% {  -webkit-transform: translate3d(15%, 100%, 0); }
+}
+
+@keyframes snow {
+  0%  {  transform: translate3d(0, -100%, 0);   }
+  100% {  transform: translate3d(15%, 100%, 0);  }
+}
